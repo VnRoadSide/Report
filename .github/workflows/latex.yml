@@ -27,6 +27,10 @@ jobs:
         path: main.pdf
 
   release_pdf:
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     needs: build
     runs-on: ubuntu-latest
     # if: github.event_name == 'workflow_dispatch'
