@@ -1,0 +1,584 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage{titlesec}
+
+% \titleformat{\chapter} % command [display] % shape {\bfseries\huge} % format
+%   {Chapter \thechapter} % label {0pt} % sep {} % before-code
+
+
+\usepackage[T5]{fontenc}
+\usepackage{mathptmx}[ptm]
+\usepackage{a4wide, amssymb, epsfig, latexsym, array, hhline, fancyhdr}
+\usepackage[normalem]{ulem}
+%\usepackage{soul}
+\usepackage{float}
+\usepackage[makeroom]{cancel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol, longtable, amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage[framemethod=tikz]{mdframed}% For highlighting paragraph backgrounds
+\usepackage{indentfirst}
+\usepackage{caption,subcaption}
+\usepackage{svg}
+\graphicspath{ {figures/} }
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}% Standard graphics package
+\graphicspath{ {figures/} }
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usepackage[numbers]{natbib}
+\usepackage{subcaption}
+
+\usepackage{dirtree}
+
+
+
+\usetikzlibrary{arrows, snakes, backgrounds, calc}
+\usepackage[unicode]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\usepackage{listings}
+\lstdefinestyle{mystyle}{ backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}, keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray}, stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize, breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false, showtabs=false,                  
+    tabsize=2 }
+\lstset{style=mystyle}
+
+
+
+\def\thesislayout{	% A4: 210 × 297
+	\geometry{ a4paper, total={160mm,240mm},  % fix over page
+		left=30mm, top=30mm, } }
+\thesislayout
+
+%\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+ \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0) \put(0,-8){\includegraphics[width=10mm,
+    height=10mm]{Images/hcmut.png}}
+    %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+   \end{picture}&
+	%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+	\begin{tabular}{l}
+        \textbf{ Ho Chi Minh City University of Technology } \\
+        \textbf{ Faculty of Computer Science and Engineering }
+	\end{tabular} 	
+ \end{tabular}
+} \fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf \end{tabular}  } \fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize Capstone Project Report (CO4029) - Academic year 2023 - 2024}
+\fancyfoot[R]{\scriptsize  Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tạo một môi trường mới cho các bảng đặc tả UC, giúp định dạng kiểu
+\newenvironment{usecase_table}[1][Test]
+{
+\begin{table}[H]
+% Left-Right Table padding
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.5}
+    % \begin{tabularx}{\textwidth}{bs}
+    \def\savedcaption{\caption{#1}}%
+    \begin{tabular}{|>{\bfseries} p{0.2\linewidth}|p{0.7\linewidth}|}
+
+} {
+    \end{tabular}
+    \savedcaption
+\end{table}
+}
+
+\newenvironment{usecase_enum}
+{
+    \begin{enumerate*}[itemjoin={\newline}]
+} {
+    \end{enumerate*}
+}
+
+\makeatletter
+\newenvironment{acknowledgments}{
+	\small
+	\begin{center}
+	  {\bfseries Acknowledgments\vspace{-.5em}\vspace{\z@}}
+	\end{center}
+	\quotation
+  }{}
+\makeatother
+
+% Declaration
+\makeatletter
+\newenvironment{declaration}{
+	\small
+	\begin{center}
+	  {\bfseries Declaration\vspace{-.5em}\vspace{\z@}}
+	\end{center}
+	\quotation
+  }{}
+\makeatother
+
+\makeatletter
+\newenvironment{abstr}{
+        \small
+        \begin{center}
+	{\bfseries Abstract \vspace{-.5em}\vspace{\z@}}
+        \end{center}
+        \quotation
+    }{}
+\makeatother
+
+\makeatletter
+\newenvironment{abstrsss}{
+        \small
+        \begin{center}
+	{\bfseries Abstractss \vspace{-.5em}\vspace{\z@}}
+        \end{center}
+        \quotation
+    }{}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+
+
+\everymath{\color{black}}%make in-line maths symbols blue to read/check easily
+
+\sloppy
+\captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
+%space removed between caption, figure, and text
+\captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+
+% Declare a variable named Proc using \newcommand
+
+\newcommand{\Uni}{Ho Chi Minh University - Vietnam National Unversity, Ho Chi Minh City}
+
+\renewcommand{\labelitemi}{\normalfont\bfseries\textendash}
+\renewcommand{\labelitemii}{\textbullet}
+\renewcommand*\baselinestretch{1.5}\selectfont
+
+
+\thesislayout
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[line width = 4pt] ($(current page.north west) + (1.0in,-0.5in)$)
+        rectangle ($(current page.south east) + (-0.4in,0.5in)$);
+        \draw[line width=1.5pt]
+        ($ (current page.north west) + (1.05in,-0.55in) $) rectangle ($ (current
+        page.south east) + (-0.45in,0.55in) $);
+    \end{tikzpicture}
+
+    \begin{center}
+        \large \textbf{VIETNAM NATIONAL UNIVERSITY, HO CHI MINH CITY} \\
+        \large \textbf{HO CHI MINH UNIVERSITY OF TECHNOLOGY} \\
+        \large \textbf{FACULTY OF COMPUTER SCIENCE AND ENGINEERING}
+    \end{center}
+
+    \begin{figure}[h!]
+        \begin{center}
+            \includegraphics[width=5cm]{Images/hcmut.png}
+        \end{center}
+    \end{figure}
+
+    \begin{center}
+        \begin{tabular}{c}
+        \multicolumn{1}{l}{\textbf{{\Large Discrete Structure (CO1007)}}}\\
+        ~~\\
+        \hline
+        \\
+        \multicolumn{1}{l}{\textbf{{\Large Assignment Report}}}\\
+        \\
+        \textbf{{\Huge BELLMAN-FORD ALGORITHM}}\\
+        \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+    \vspace{1cm}
+    \begin{table}[H]
+        \begin{tabular}{rrl}
+        \hspace{5 cm} & \textbf{Mentor}: & Nguyen An Khuong \\
+        & & Mai Xuan Toan \\
+        & & Nguyen Tien Thinh \\
+        
+        & \textbf{Student}: & Trần Hà Tuấn Kiệt -- 2011493 \\
+        
+        \end{tabular}
+        \end{table}
+    \vspace{1cm}
+
+    \begin{center}
+        {\large Ho Chi Minh City, \the\month/\the\year}
+    \end{center}
+\end{titlepage}
+
+
+\newpage
+
+%\thispagestyle{empty} \chapter*{Work Assignment} \begin{table}[H] \centering
+% \renewcommand{\arraystretch}{1.5} \begin{tabular}{|c|c|c|l|} \hline
+% \textbf{No.}       & \textbf{Full name}                 & \textbf{Student ID}
+% & \textbf{Work Assignment}                     \\
+%         \hline %%%%%Student 1%%%%%%%%%%% \multirow{4}{*}{1} &
+%         \multirow{4}{*}{Trần Hà Tuấn Kiệt} & \multirow{4}{*}{2011493} & -
+%         Exploratory Data Analysis                  \\
+%                            &                                    &
+%                            & - System proposal and architecture           \\
+%                            &                                    &
+%                            & - Research and Develop with new technologies \\
+%                            &                                    &
+%                            & - Implement system endpoints                 \\
+%         \hline %%%%%Student 2%%%%%%%%%%% \multirow{4}{*}{2} &
+%         \multirow{4}{*}{Nguyễn Đức Thuỵ}   & \multirow{4}{*}{2012158} & -
+%         Exploratory Data Analysis                  \\
+%                            &                                    &
+%                            & - System proposal and architecture           \\
+%                            &                                    &
+%                            & - Research and Develop with new technologies \\
+%                            &                                    &
+%                            & - Implement data processing flows            \\
+%         \hline \end{tabular} \end{table} \newpage
+
+% Revert title name back to English
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\bibname}{References}
+\renewcommand{\figurename}{Figure}
+
+\tableofcontents
+\newpage
+
+%\thispagestyle{empty}
+\listoffigures
+\listoftables
+\newpage
+
+% \renewcommand\thechapter{Chapter \arabic{chapter}}
+
+\section{Introduction}
+Graph algorithms are essential in solving problems related to networks, routing,
+and resource allocation. The Bellman-Ford algorithm provides a robust method for
+finding shortest paths in graphs that may have negative weights. The Traveling
+Salesman Problem (TSP), on the other hand, poses a challenge in combinatorial
+optimization, seeking the shortest possible route visiting each city and
+returning to the origin city.
+
+\section{Bellman-Ford Algorithm}
+\subsection{Description}
+The Bellman-Ford algorithm computes shortest paths from a single source vertex
+to all other vertices in a weighted digraph. It is capable of handling graphs
+with negative weight edges, unlike Dijkstra's algorithm.
+
+\subsection{Complexity Analysis}
+The time complexity of Bellman-Ford is \(O(VE)\), where \(V\) is the number of
+vertices and \(E\) is the number of edges. Its space complexity is \(O(V)\), as
+it maintains a distance array.
+
+\subsection{Bellman-Ford Path Calculation}
+Path reconstruction is carried out using the predecessor array filled during the
+execution of the Bellman-Ford algorithm. By tracking predecessors from the
+destination node back to the source, one can determine the complete path
+traversed.
+
+\section{Traveling Salesman Problem}
+\subsection{Introduction}
+The Traveling Salesman Problem (TSP) presents a classic dilemma in combinatorial
+optimization and operations research, asking for the shortest possible route
+that visits each city exactly once and returns to the origin city. The problem
+is classified as NP-hard, which implies that no efficient algorithm exists that
+can solve all instances of TSP within polynomial time. This makes it an ideal
+benchmark for many optimization techniques, both exact and heuristic, in fields
+ranging from logistics to DNA sequencing, where the goal is often to minimize
+travel distance or cost.
+
+\subsection{Theoretical Significance}
+Understanding TSP helps illuminate the complexity inherent in many real-world
+optimization problems. It also serves as a gateway to discussing other
+computational problems in NP, such as the Hamiltonian cycle problem, and
+provides insight into the theory of computational complexity itself. Its study
+has helped develop foundational concepts in algorithm design and complexity
+theory, including the introduction of approximation algorithms for NP-hard
+problems.
+
+\subsection{Genetic Algorithm for TSP}
+Genetic Algorithms (GAs) are inspired by Darwinian principles of natural
+selection and genetics, and they have proven to be particularly adept at finding
+good solutions to TSP with relatively low computational costs compared to
+exhaustive search methods\cite{8862255}. They simulate the process of natural
+selection where the fittest individuals are selected for reproduction in order
+to produce offspring of the next generation.
+
+\subsection{Implementation}
+GAs for TSP start with a population of possible solutions (tours) represented as
+sequences of city visits. These solutions undergo processes analogous to natural
+genetic variation\cite{article}: 
+\begin{itemize}
+    \item \textbf{Selection}: Tours are selected for reproduction based on their
+    fitness, which is typically inversely proportional to their travel cost.
+    \item \textbf{Crossover}: Selected tours are recombined to produce new
+    offspring tours, hoping to combine advantageous traits from each parent.
+    \item \textbf{Mutation}: To maintain genetic diversity within the population
+    and to explore a wider solution space, tours are randomly altered. 
+\end{itemize}
+Iterative application of these processes results in the evolution of tours that
+tend to be more fit over time.
+
+
+\subsection{Pseudocode}
+Provide detailed pseudocode for a Genetic Algorithm applied to TSP. The
+following pseudocode outlines the process of evolving a population of tours to
+find an approximate solution to the TSP:
+
+\begin{verbatim}
+    function GeneticAlgorithm()
+        Initialize population with random tours
+        Evaluate fitness of each tour
+        Repeat
+            Selection: Choose the fitter tours for reproduction
+            Crossover: Combine parts of two tours to create new tour
+            Mutation: Randomly alter a tour's path
+            Evaluate new fitness: Assess the quality of new tours
+        Until termination condition met 
+        (e.g., number of generations, time limit)
+        return best tour found
+    end function
+\end{verbatim}
+    
+
+Each step of the Genetic Algorithm is detailed below:
+
+\subsubsection*{Selection}
+The selection process preferentially chooses individuals from the current
+population based on their fitness scores.
+\begin{verbatim}
+Function Selection(Population, FitnessScores)
+    Selected = []
+    For each tour in Population
+        Probability = FitnessScore of tour / Sum of all FitnessScores
+        If random number < Probability
+            Add tour to Selected
+        End If
+    End For
+    Return Selected
+End Function
+\end{verbatim}
+
+\subsubsection*{Crossover}
+Crossover is a genetic operator used to combine the genetic information of two
+parents to generate new offspring.
+\begin{verbatim}
+Function Crossover(Parent1, Parent2)
+    Child = New Tour()
+    SplitPoint = Random number between 1 and length of Tour - 1
+    Copy first SplitPoint genes from Parent1 to Child
+    Fill remaining genes in Child with genes from Parent2 
+not already in Child maintaining order
+    Return Child
+End Function
+\end{verbatim}
+
+\subsubsection*{Mutation}
+Mutation introduces small random changes in the offspring, providing genetic
+diversity.
+\begin{verbatim}
+Function Mutation(Tour, MutationRate)
+    For each gene in Tour
+        If random number < MutationRate
+            Swap this gene with another random gene in the Tour
+        End If
+    End For
+    Return Tour
+End Function
+\end{verbatim}
+
+\subsubsection*{Evaluate New Fitness}
+After mutation and crossover, the fitness of new solutions must be evaluated.
+\begin{verbatim}
+Function EvaluateFitness(Tour)
+    TotalDistance = 0
+    For i from 1 to length of Tour - 1
+        TotalDistance += Distance between Tour[i] and Tour[i+1]
+    End For
+    TotalDistance += Distance between Tour[end] and Tour[begin]
+    Fitness = 1 / TotalDistance
+    Return Fitness
+End Function
+\end{verbatim}
+
+
+\subsection{Results Discussion}
+The performance of Genetic Algorithms in solving the TSP can vary significantly
+with changes in parameters such as population size, mutation rate, and selection
+method. While GAs do not guarantee an optimal solution, they are highly
+effective at producing very good solutions within reasonable time limits,
+particularly for very large instances where other methods become impractical.
+Their effectiveness also hinges on the proper tuning of parameters and
+adaptation of the algorithm to specific characteristics of the problem instance.
+
+
+\section{Evaluation}
+
+\subsection{How to Compile and Run the Program}
+To compile and run the program, follow the steps outlined below. These
+instructions assume you have a Makefile configured with the necessary commands
+to compile the program.
+
+\subsubsection*{Compiling the Program}
+To compile the program, open a terminal in the directory containing your source
+files and Makefile, and execute the following command:
+\begin{verbatim}
+make -s
+\end{verbatim}
+This command calls `make` with the `-s` (silent) option to suppress the display
+of commands being executed, making the output cleaner.
+
+\subsubsection*{Running the Program}
+Once the compilation is successful, you can run the compiled program by entering
+the following command in the terminal:
+\begin{verbatim}
+./main
+\end{verbatim}
+This command executes the `main` executable that was generated by the
+compilation process. Ensure that you have the appropriate permissions to execute
+the file, and that the current working directory is where the `main` executable
+is located.
+
+
+\subsection{Test Results}
+
+\[
+\begin{array}{cccccccccccc}
+0 & 17 & 40 & 100 & 32 & 11 & 29 & 77 & 73 & 53 & 52 & 72 \\
+48 & 0 & 23 & 42 & 81 & 5 & 12 & 37 & 31 & 55 & 18 & 66 \\
+48 & 97 & 0 & 74 & 21 & 43 & 8 & 37 & 48 & 13 & 55 & 88 \\
+79 & 53 & 66 & 0 & 8 & 97 & 38 & 61 & 48 & 76 & 75 & 71 \\
+18 & 56 & 42 & 97 & 0 & 59 & 40 & 51 & 77 & 5 & 65 & 39 \\
+45 & 86 & 82 & 20 & 23 & 0 & 96 & 100 & 44 & 84 & 45 & 97 \\
+15 & 53 & 93 & 53 & 80 & 7 & 0 & 29 & 21 & 78 & 13 & 43 \\
+87 & 9 & 1 & 26 & 26 & 44 & 98 & 0 & 92 & 49 & 9 & 77 \\
+30 & 29 & 66 & 93 & 28 & 9 & 76 & 73 & 0 & 73 & 91 & 92 \\
+31 & 9 & 38 & 38 & 38 & 25 & 83 & 17 & 68 & 0 & 69 & 93 \\
+35 & 61 & 19 & 45 & 24 & 10 & 94 & 33 & 53 & 90 & 0 & 62 \\
+19 & 82 & 57 & 95 & 57 & 96 & 67 & 13 & 54 & 65 & 90 & 0 \\
+\end{array}
+\]
+
+\subsubsection*{TSP}
+
+\textbf{Parameters}: Population size = 100, Mutation Rate = 0.05, Generations =
+2000
+
+\textbf{Results}:
+\begin{verbatim}
+    Running TSP Solver:
+    TSP Path: IFDEJABKLHCGI
+    TSP Path Cost: 213
+    Accuracy: 95.5882%
+\end{verbatim}
+
+\textbf{Parameters}: Population size = 200, Mutation Rate = 0.05, Generations =
+2000
+
+\textbf{Results}:
+\begin{verbatim}
+    Running TSP Solver:
+    TSP Path: GIAFDEJBKLHCG
+    TSP Path Cost: 206
+    Accuracy: 99.0196%
+\end{verbatim}
+
+\textbf{Parameters}: Population size = 200, Mutation Rate = 0.05, Generations =
+10000
+
+\textbf{Results}:
+\begin{verbatim}
+    Running TSP Solver:
+    TSP Path: HKCJBGIAFDELH
+    TSP Path Cost: 204
+    Accuracy: 100%
+\end{verbatim}
+
+\textbf{Parameters}: Population size = 200, Mutation Rate = 0.07, Generations =
+2000
+
+\textbf{Results}:
+\begin{verbatim}
+    Running TSP Solver:
+    TSP Path: GIAFDELHKCJBG
+    TSP Path Cost: 204
+    Accuracy: 100%
+\end{verbatim}
+
+\subsection{Limitations and Potential Improvements}
+Despite their advantages, GAs can suffer from premature convergence to
+suboptimal solutions and can be sensitive to the initial population and
+parameter settings. Ongoing research aims to improve the robustness and
+efficiency of GAs by integrating advanced techniques such as hybrid algorithms
+that combine GAs with local search methods, adaptive parameter tuning, and
+machine learning strategies to predict and adjust evolutionary dynamics
+dynamically.
+
+\section{Conclusion}
+The Bellman-Ford algorithm's ability to handle negative weights makes it a
+powerful tool for graph analysis. Meanwhile, GAs offer a robust heuristic method
+for tackling NP-hard problems like the TSP, especially in large datasets where
+exact methods are computationally impractical.
+
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
