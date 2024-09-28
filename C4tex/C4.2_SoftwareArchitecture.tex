@@ -5,27 +5,27 @@
         \caption{Kiến trúc hệ thống}
     \end{figure}
 
-\section{Kiến trúc mạng}
-\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.8\linewidth]{Images/network.png}
-        \vspace{1em}
-        \caption{Kiến trúc mạng}
-        \label{fig:enter-label}
-    \end{figure}
+% \section{Kiến trúc mạng}
+% \begin{figure}[h]
+%         \centering
+%         \includegraphics[width=0.8\linewidth]{Images/network.png}
+%         \vspace{1em}
+%         \caption{Kiến trúc mạng}
+%         \label{fig:enter-label}
+%     \end{figure}
 
-Kiến trúc này được triển khai để kết nối giữa người dùng cuối, nền tảng triển khai ứng dụng, và cơ sở dữ liệu. Các thành phần chính trong kiến trúc bao gồm:
-\begin{itemize}
-    \item \textbf{Browser (Trình duyệt):} Trình duyệt web và các thiết bị di động là điểm bắt đầu, nơi người dùng tương tác với ứng dụng web. Người dùng truy cập vào ứng dụng thông qua giao diện web, thực hiện các thao tác như đăng nhập, tìm kiếm, và quản lý thông tin.
-    \item \textbf{Vercel:} Vercel là nền tảng triển khai ứng dụng được sử dụng trong hệ thống này. Nó đảm bảo việc phân phối nội dung tĩnh và động một cách nhanh chóng và hiệu quả. Vercel chịu trách nhiệm triển khai và quản lý mã nguồn của ứng dụng web, đảm bảo rằng các yêu cầu từ phía người dùng được xử lý kịp thời và hiệu quả. Vercel nhận các yêu cầu từ trình duyệt, xử lý chúng và tương tác với các dịch vụ back-end để lấy dữ liệu cần thiết.
-    \item \textbf{App Services:} App Services đóng vai trò là server của hệ thống. Nó thực hiện các logic nghiệp vụ của ứng dụng, tương tác với cơ sở dữ liệu để xử lý và lưu trữ dữ liệu cần thiết. Các dịch vụ này chịu trách nhiệm xử lý các yêu cầu từ Vercel, thực hiện các tác vụ như xác thực người dùng, xử lý dữ liệu, và thực thi các quy trình nghiệp vụ của ứng dụng. App Services kết nối trực tiếp với cơ sở dữ liệu Azure SQL Database để truy xuất và cập nhật dữ liệu.
-    \item \textbf{Azure SQL Database:} Azure SQL Database là cơ sở dữ liệu chính của hệ thống. Nó chịu trách nhiệm lưu trữ và quản lý tất cả dữ liệu cần thiết cho ứng dụng. Cơ sở dữ liệu này đảm bảo tính toàn vẹn và bảo mật của dữ liệu, cung cấp khả năng truy xuất dữ liệu nhanh chóng và hiệu quả cho các dịch vụ ứng dụng. Dữ liệu từ App Services được lưu trữ và truy vấn trực tiếp từ Azure SQL Database, đảm bảo rằng mọi thông tin được lưu giữ an toàn và có thể truy cập nhanh chóng khi cần thiết.
+% Kiến trúc này được triển khai để kết nối giữa người dùng cuối, nền tảng triển khai ứng dụng, và cơ sở dữ liệu. Các thành phần chính trong kiến trúc bao gồm:
+% \begin{itemize}
+%     \item \textbf{Browser (Trình duyệt):} Trình duyệt web và các thiết bị di động là điểm bắt đầu, nơi người dùng tương tác với ứng dụng web. Người dùng truy cập vào ứng dụng thông qua giao diện web, thực hiện các thao tác như đăng nhập, tìm kiếm, và quản lý thông tin.
+%     \item \textbf{Vercel:} Vercel là nền tảng triển khai ứng dụng được sử dụng trong hệ thống này. Nó đảm bảo việc phân phối nội dung tĩnh và động một cách nhanh chóng và hiệu quả. Vercel chịu trách nhiệm triển khai và quản lý mã nguồn của ứng dụng web, đảm bảo rằng các yêu cầu từ phía người dùng được xử lý kịp thời và hiệu quả. Vercel nhận các yêu cầu từ trình duyệt, xử lý chúng và tương tác với các dịch vụ back-end để lấy dữ liệu cần thiết.
+%     \item \textbf{App Services:} App Services đóng vai trò là server của hệ thống. Nó thực hiện các logic nghiệp vụ của ứng dụng, tương tác với cơ sở dữ liệu để xử lý và lưu trữ dữ liệu cần thiết. Các dịch vụ này chịu trách nhiệm xử lý các yêu cầu từ Vercel, thực hiện các tác vụ như xác thực người dùng, xử lý dữ liệu, và thực thi các quy trình nghiệp vụ của ứng dụng. App Services kết nối trực tiếp với cơ sở dữ liệu Azure SQL Database để truy xuất và cập nhật dữ liệu.
+%     \item \textbf{Azure SQL Database:} Azure SQL Database là cơ sở dữ liệu chính của hệ thống. Nó chịu trách nhiệm lưu trữ và quản lý tất cả dữ liệu cần thiết cho ứng dụng. Cơ sở dữ liệu này đảm bảo tính toàn vẹn và bảo mật của dữ liệu, cung cấp khả năng truy xuất dữ liệu nhanh chóng và hiệu quả cho các dịch vụ ứng dụng. Dữ liệu từ App Services được lưu trữ và truy vấn trực tiếp từ Azure SQL Database, đảm bảo rằng mọi thông tin được lưu giữ an toàn và có thể truy cập nhanh chóng khi cần thiết.
     
-\end{itemize}
+% \end{itemize}
 
-Kiến trúc này đảm bảo rằng các thành phần trong hệ thống hoạt động cùng nhau một cách nhịp nhàng và hiệu quả. Trình duyệt và thiết bị di động của người dùng tương tác với Vercel, nền tảng triển khai ứng dụng, để gửi và nhận dữ liệu. Vercel đóng vai trò trung gian, chuyển tiếp các yêu cầu đến App Services, nơi thực hiện các logic nghiệp vụ và xử lý dữ liệu. App Services sau đó tương tác với Azure SQL Database để truy xuất và lưu trữ dữ liệu cần thiết, đảm bảo rằng hệ thống hoạt động mượt mà, hiệu quả và an toàn.\\
+% Kiến trúc này đảm bảo rằng các thành phần trong hệ thống hoạt động cùng nhau một cách nhịp nhàng và hiệu quả. Trình duyệt và thiết bị di động của người dùng tương tác với Vercel, nền tảng triển khai ứng dụng, để gửi và nhận dữ liệu. Vercel đóng vai trò trung gian, chuyển tiếp các yêu cầu đến App Services, nơi thực hiện các logic nghiệp vụ và xử lý dữ liệu. App Services sau đó tương tác với Azure SQL Database để truy xuất và lưu trữ dữ liệu cần thiết, đảm bảo rằng hệ thống hoạt động mượt mà, hiệu quả và an toàn.\\
 
-Kiến trúc này không chỉ đảm bảo khả năng mở rộng và linh hoạt cho ứng dụng mà còn cung cấp một môi trường bảo mật và hiệu quả cho việc quản lý và xử lý dữ liệu. Sự kết hợp giữa các công nghệ hiện đại như Vercel, Azure App Services, và Azure SQL Database tạo ra một hệ thống mạnh mẽ, đáng tin cậy và dễ dàng bảo trì trong tương lai.
+% Kiến trúc này không chỉ đảm bảo khả năng mở rộng và linh hoạt cho ứng dụng mà còn cung cấp một môi trường bảo mật và hiệu quả cho việc quản lý và xử lý dữ liệu. Sự kết hợp giữa các công nghệ hiện đại như Vercel, Azure App Services, và Azure SQL Database tạo ra một hệ thống mạnh mẽ, đáng tin cậy và dễ dàng bảo trì trong tương lai.
 
 \section{API Endpoints}
 
