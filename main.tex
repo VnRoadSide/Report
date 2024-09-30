@@ -54,6 +54,15 @@
 \theoremstyle{definition}
 \newtheorem{exer}{Bài toán}
 
+\AtBeginDocument{\renewcommand*\contentsname{Mục lục}}
+\AtBeginDocument{\renewcommand*\refname{Tài liệu tham khảo}}
+\AtBeginDocument{\renewcommand*\listfigurename{Danh sách hình ảnh}}
+\AtBeginDocument{\renewcommand*\listtablename{Danh sách bảng}}
+\AtBeginDocument{\renewcommand{\chaptername}{Chương}}
+% rename bilibliography to list of references
+\AtBeginDocument{\renewcommand{\bibname}{\refname}}
+
+
 \def\thesislayout{	% A4: 210 × 297
 	\geometry{
 		a4paper,
@@ -240,7 +249,7 @@ Chúng tôi chấp nhận mọi trách nhiệm và hậu quả pháp lý liên q
 \begin{flushright}
 
     \begin{tabular}{@{}c@{}}
-    Thành phố Hồ Chí Minh, \today \\
+    Thành phố Hồ Chí Minh, ngày $\the\day$  tháng $\the\month$ năm $\the\year$ \\
     \textbf{NGƯỜI THỰC HIỆN} \\
     Phan Thị Quỳnh Như \\
     Ngô Bích Ngọc

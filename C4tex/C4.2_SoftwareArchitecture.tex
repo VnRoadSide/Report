@@ -1,7 +1,7 @@
 \section{Kiến trúc hệ thống}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.6\linewidth]{Images/Demeter.png}
+        \includegraphics[width=0.6\linewidth]{Images/Roadside.png}
         \caption{Kiến trúc hệ thống}
     \end{figure}
 
@@ -346,46 +346,46 @@
 \hline
 \end{tabular}
 
-\subsection{Stripe Integration}
+% \subsection{Stripe Integration}
 
-\subsubsection*{/api/stripe/customer/add - POST}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|p{12cm}|}
-\hline
-\textbf{Operation} & POST \\
-\hline
-\textbf{Description} & Adds a new customer to Stripe with credit card details. \\
-\hline
-\textbf{Request Body} & Includes Email, Name, and Credit Card details (Name, Number, Expiration, CVC). \\
-\hline
-\textbf{Responses} & 200: Success, returns the created Stripe customer object. \\
-\hline
-\end{tabular}
+% \subsubsection*{/api/stripe/customer/add - POST}
+% \begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|p{12cm}|}
+% \hline
+% \textbf{Operation} & POST \\
+% \hline
+% \textbf{Description} & Adds a new customer to Stripe with credit card details. \\
+% \hline
+% \textbf{Request Body} & Includes Email, Name, and Credit Card details (Name, Number, Expiration, CVC). \\
+% \hline
+% \textbf{Responses} & 200: Success, returns the created Stripe customer object. \\
+% \hline
+% \end{tabular}
 
-\subsubsection*{/api/stripe/payment/add - POST}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|p{12cm}|}
-\hline
-\textbf{Operation} & POST \\
-\hline
-\textbf{Description} & Processes a payment via Stripe for a customer. \\
-\hline
-\textbf{Request Body} & AddStripePayment schema, includes customer ID, receipt email, and payment details. \\
-\hline
-\textbf{Responses} & 200: Success, returns the Stripe payment object. \\
-\hline
-\end{tabular}
+% \subsubsection*{/api/stripe/payment/add - POST}
+% \begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|p{12cm}|}
+% \hline
+% \textbf{Operation} & POST \\
+% \hline
+% \textbf{Description} & Processes a payment via Stripe for a customer. \\
+% \hline
+% \textbf{Request Body} & AddStripePayment schema, includes customer ID, receipt email, and payment details. \\
+% \hline
+% \textbf{Responses} & 200: Success, returns the Stripe payment object. \\
+% \hline
+% \end{tabular}
 
-\subsubsection*{/api/stripe/create-checkout-session - POST}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|p{12cm}|}
-\hline
-\textbf{Operation} & POST \\
-\hline
-\textbf{Description} & Creates a Stripe checkout session for handling payments on the client side. \\
-\hline
-\textbf{Request Body} & CreateCheckoutSessionStripeRequest schema, includes product and pricing details. \\
-\hline
-\textbf{Responses} & 200: Success, returns session details for client-side handling. \\
-\hline
-\end{tabular}
+% \subsubsection*{/api/stripe/create-checkout-session - POST}
+% \begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|p{12cm}|}
+% \hline
+% \textbf{Operation} & POST \\
+% \hline
+% \textbf{Description} & Creates a Stripe checkout session for handling payments on the client side. \\
+% \hline
+% \textbf{Request Body} & CreateCheckoutSessionStripeRequest schema, includes product and pricing details. \\
+% \hline
+% \textbf{Responses} & 200: Success, returns session details for client-side handling. \\
+% \hline
+% \end{tabular}
 
 \subsection{Users}
 
