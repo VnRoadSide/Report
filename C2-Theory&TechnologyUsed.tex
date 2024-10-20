@@ -58,7 +58,7 @@ $\indent$ Next.js \cite{nextjs} là một framework React mã nguồn mở đư�
 
 Next.js sử dụng cách tiếp cận "page-based routing" kết hợp với "component-based" của React để xây dựng giao diện. Điều này cho phép tổ chức cấu trúc ứng dụng một cách trực quan và hiệu quả, đồng thời vẫn giữ được khả năng tái sử dụng và modular hóa cao của các component. Cách tiếp cận này giúp tách biệt logic và giao diện, dễ dàng quản lý và bảo trì mã nguồn, đồng thời tạo ra một kiến trúc ứng dụng rõ ràng và dễ mở rộng.
 
-Một trong những tính năng nổi bật của Next.js là khả năng Server-Side Rendering (SSR) và Static Site Generation (SSG). SSR giúp cải thiện đáng kể thời gian tải trang đầu tiên và tối ưu hóa SEO, trong khi SSG cho phép tạo ra các trang tĩnh tại thời điểm build, giúp tăng tốc độ và giảm tải cho server. Next.js cũng hỗ trợ Incremental Static Regeneration (ISR), cho phép cập nhật từng phần của trang tĩnh mà không cần phải build lại toàn bộ site \cite{nextjs-features}.
+Một trong những tính năng nổi bật của Next.js là khả năng Server-Side Rendering (SSR) và Static Site Generation (SSG). SSR giúp cải thiện đáng kể thời gian tải trang đầu tiên và tối ưu hóa SEO, trong khi SSG cho phép tạo ra các trang tĩnh tại thời điểm build, giúp tăng tốc độ và giảm tải cho server. Next.js cũng hỗ trợ Incremental Static Regeneration (ISR), cho phép cập nhật từng phần của trang tĩnh mà không cần phải build lại toàn bộ site.
 
 Next.js tích hợp sẵn nhiều tính năng quan trọng như code splitting, lazy loading, và tối ưu hóa hình ảnh. Điều này giúp cải thiện hiệu suất ứng dụng một cách đáng kể mà không cần cấu hình phức tạp.
 
@@ -95,24 +95,12 @@ Mantine là một lựa chọn lý tưởng để xây dựng giao diện ngư�
     
 \end{figure}
 
-\subsection{Vercel}
-$\indent$ Vercel \cite{vercel} là một nền tảng triển khai và lưu trữ trang web, ứng dụng Front-end được phát triển bởi Vercel, Inc. (trước đây là Zeit). Nền tảng này được thiết kế đặc biệt để triển khai các ứng dụng web hiện đại và tĩnh dựa trên các framework như React, Next.js, Vue.js và Nuxt.js.\\
-
-Với Vercel, có thể dễ dàng triển khai mã nguồn thông qua quy trình CI/CD tích hợp sẵn. Nền tảng này tự động xây dựng, triển khai và cung cấp các bản xem trước cho mỗi lần push code lên Git. Vercel cũng cung cấp các tính năng như phân phối nội dung toàn cầu thông qua mạng CDN, quản lý các bản triển khai, tích hợp các dịch vụ bên thứ ba và tự động hóa quy trình build/deploy.\\
-
-Một trong những lợi ích chính của Vercel là nó cho phép tập trung vào việc xây dựng ứng dụng mà không cần phải lo lắng về việc quản lý cơ sở hạ tầng triển khai. Vercel xử lý tất cả các nhiệm vụ liên quan đến triển khai, bảo mật và mở rộng, giúp gia tăng năng suất và tập trung vào phát triển tính năng.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Images/vercel.png}
-    \vspace{1em}
-    \caption{Vercel}
-\end{figure}
-\section{Back-end - Database}
+\section{Back-end và Database}
 \subsection{ASP.NET Core và Entity Framework (EF) Core}
 
 $\indent$ ASP.NET Core \cite{asp}là một framework phát triển ứng dụng web mạnh mẽ được phát triển bởi Microsoft. Nó cung cấp một nền tảng cho việc xây dựng các ứng dụng web đa dạng và mạnh mẽ bằng cách sử dụng ngôn ngữ lập trình C\#.\\
 
-Entity Framework(EF) Core là một ORM (Object-Relational Mapping) framework cũng do Microsoft phát triển, giúp tương tác và quản lý cơ sở dữ liệu trong ứng dụng. Nó giúp lập trình viên làm việc với dữ liệu cơ sở dữ liệu bằng cách sử dụng đối tượng và cung cấp một lớp trừu tượng giúp ẩn đi các chi tiết về cơ sở dữ liệu thực tế.\\ 
+Entity Framework(EF) Core \cite{ef} là một ORM (Object-Relational Mapping) framework cũng do Microsoft phát triển, giúp tương tác và quản lý cơ sở dữ liệu trong ứng dụng. Nó giúp lập trình viên làm việc với dữ liệu cơ sở dữ liệu bằng cách sử dụng đối tượng và cung cấp một lớp trừu tượng giúp ẩn đi các chi tiết về cơ sở dữ liệu thực tế.\\ 
 
 Khi kết hợp sử dụng ASP.NET Core và Entity Framework Core, người phát triển có thể xây dựng các ứng dụng web mạnh mẽ và dễ dàng quản lý cơ sở dữ liệu. Thông qua Entity Framework Core, dữ liệu được quản lý trong các đối tượng .NET, giúp giảm thiểu việc phải viết các câu truy vấn SQL trực tiếp. Thêm vào đó, ASP.NET Core cung cấp nền tảng cho việc xây dựng các giao diện người dùng tương tác, cho phép người dùng tương tác với dữ liệu được quản lý bởi Entity Framework Core.\\
 
@@ -150,3 +138,58 @@ Tóm lại, việc lựa chọn PostgreSQL trên nền tảng Neon đã cung c�
     
 \end{figure}
 
+\subsection{Redis}
+$\indent$ Redis \cite{redis} là một hệ thống lưu trữ cấu trúc dữ liệu key-value trong bộ nhớ, được sử dụng rộng rãi như một giải pháp caching hiệu quả. Nó được phát triển như một dự án mã nguồn mở và hỗ trợ nhiều cấu trúc dữ liệu như chuỗi, hash, danh sách, tập hợp và sorted sets. Redis nổi tiếng với hiệu suất cao và khả năng xử lý hàng triệu yêu cầu mỗi giây.
+
+Redis cung cấp nhiều ưu điểm quan trọng cho dự án. Đầu tiên, tốc độ xử lý của Redis rất nhanh do lưu trữ dữ liệu trong bộ nhớ RAM, cho phép truy xuất dữ liệu với độ trễ cực thấp. Thứ hai, Redis hỗ trợ đa dạng cấu trúc dữ liệu, giúp lưu trữ và truy xuất dữ liệu một cách linh hoạt. Thứ ba, Redis có khả năng persistence, cho phép lưu dữ liệu vào ổ đĩa, đảm bảo tính bền vững của dữ liệu. Ngoài ra, Redis dễ dàng mở rộng theo chiều ngang với các cụm Redis và có thư viện hỗ trợ cho hầu hết các ngôn ngữ lập trình phổ biến.
+
+Việc sử dụng Redis trong dự án giúp tối ưu hóa hiệu suất ứng dụng bằng cách giảm thời gian truy xuất dữ liệu, giảm tải cho cơ sở dữ liệu chính và cải thiện trải nghiệm người dùng với thời gian phản hồi nhanh hơn. Redis đặc biệt hữu ích trong việc lưu trữ các dữ liệu tạm thời như phiên đăng nhập, kết quả tính toán phức tạp, và dữ liệu được truy cập thường xuyên.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/redis.png}
+    \vspace{1em}
+    \caption{Redis}
+    
+\end{figure}
+
+\subsection{Cloudinary}
+$\indent$ Cloudinary \cite{cloudinary} là một nền tảng quản lý hình ảnh và video trên đám mây, cung cấp giải pháp toàn diện cho việc tải lên, lưu trữ, tối ưu hóa, và phân phối nội dung đa phương tiện. Nền tảng này được thiết kế để giúp các nhà phát triển và doanh nghiệp quản lý hiệu quả tài sản đa phương tiện của họ, đồng thời cung cấp các công cụ mạnh mẽ để xử lý và phân phối nội dung.
+
+Lựa chọn Cloudinary cho quản lý hình ảnh trong dự án mang lại nhiều lợi ích đáng kể. Đầu tiên, Cloudinary cung cấp khả năng tự động tối ưu hóa hình ảnh, cân bằng giữa chất lượng và kích thước file, giúp tăng tốc độ tải trang. Thứ hai, nền tảng này cho phép biến đổi hình ảnh linh hoạt thông qua URL, bao gồm thay đổi kích thước, cắt, xoay và áp dụng các hiệu ứng. Thứ ba, Cloudinary sử dụng CDN (Content Delivery Network) để phân phối nội dung nhanh chóng trên toàn cầu, cải thiện trải nghiệm người dùng ở mọi vị trí địa lý.
+
+Bên cạnh đó, Cloudinary cung cấp nhiều tùy chọn bảo mật như chữ ký URL và hạn chế truy cập, đảm bảo an toàn cho tài sản đa phương tiện. Nền tảng này cũng có giao diện quản lý trực quan, dễ sử dụng cho việc tổ chức và tìm kiếm tài sản. Đặc biệt, Cloudinary cung cấp SDK và API cho nhiều ngôn ngữ lập trình và framework phổ biến, giúp tích hợp dễ dàng vào dự án. Tóm lại, bằng cách sử dụng Cloudinary, dự án có thể tập trung vào việc phát triển các tính năng cốt lõi mà không cần lo lắng về việc quản lý, tối ưu hóa và phân phối hình ảnh, đồng thời đảm bảo rằng nội dung đa phương tiện được xử lý một cách chuyên nghiệp và hiệu quả.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{Images/cloudinary.png}
+    \vspace{1em}
+    \caption{Cloudinary}
+    
+\end{figure}
+
+\section{Deploy}
+\subsection{Vercel}
+$\indent$ Vercel \cite{vercel} là một nền tảng triển khai và lưu trữ trang web, ứng dụng Front-end được phát triển bởi Vercel, Inc. (trước đây là Zeit). Nền tảng này được thiết kế đặc biệt để triển khai các ứng dụng web hiện đại và tĩnh dựa trên các framework như React, Next.js, Vue.js và Nuxt.js.\\
+
+Với Vercel, có thể dễ dàng triển khai mã nguồn thông qua quy trình CI/CD tích hợp sẵn. Nền tảng này tự động xây dựng, triển khai và cung cấp các bản xem trước cho mỗi lần push code lên Git. Vercel cũng cung cấp các tính năng như phân phối nội dung toàn cầu thông qua mạng CDN, quản lý các bản triển khai, tích hợp các dịch vụ bên thứ ba và tự động hóa quy trình build/deploy.\\
+
+Một trong những lợi ích chính của Vercel là nó cho phép tập trung vào việc xây dựng ứng dụng mà không cần phải lo lắng về việc quản lý cơ sở hạ tầng triển khai. Vercel xử lý tất cả các nhiệm vụ liên quan đến triển khai, bảo mật và mở rộng, giúp gia tăng năng suất và tập trung vào phát triển tính năng.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/vercel.png}
+    \vspace{1em}
+    \caption{Vercel}
+\end{figure}
+\subsection{Render}
+Render \cite{render} là một nền tảng đám mây hiện đại được thiết kế để triển khai và quản lý các ứng dụng web, API, cơ sở dữ liệu và các dịch vụ backend khác. Nền tảng này cung cấp một môi trường đơn giản nhưng mạnh mẽ cho việc triển khai các ứng dụng từ nhiều ngôn ngữ lập trình và framework khác nhau, bao gồm Node.js, Python, Ruby, Go và các ứng dụng Docker. Render tự động hóa nhiều quy trình phức tạp trong việc triển khai và quản lý ứng dụng, giúp phát triển tập trung vào việc viết mã thay vì lo lắng về cơ sở hạ tầng.
+
+Một trong những ưu điểm chính của Render là khả năng tích hợp CI/CD (Continuous Integration/Continuous Deployment) liền mạch. Nền tảng này tự động phát hiện các thay đổi trong kho lưu trữ Git và triển khai các bản cập nhật, giúp quy trình phát triển và triển khai trở nên nhanh chóng và hiệu quả. Render cũng cung cấp tính năng tự động mở rộng, cho phép ứng dụng dễ dàng đáp ứng với lưu lượng truy cập tăng đột biến mà không cần can thiệp thủ công. Ngoài ra, Render còn cung cấp chứng chỉ SSL miễn phí, bảo mật DDoS và các tính năng bảo mật khác để đảm bảo an toàn cho ứng dụng.
+
+Render đặc biệt phù hợp cho việc triển khai backend vì nó cung cấp môi trường có thể tùy chỉnh cao, hỗ trợ nhiều loại cơ sở dữ liệu và dịch vụ phụ trợ. Nền tảng này cho phép dễ dàng quản lý các biến môi trường, theo dõi logs và giám sát hiệu suất ứng dụng. Với giao diện người dùng trực quan và API mạnh mẽ, Render giúp đơn giản hóa quy trình quản lý và duy trì ứng dụng backend. Tóm lại, Render cung cấp một giải pháp toàn diện cho việc triển khai và quản lý backend, cho phép nhóm tập trung vào việc xây dựng tính năng và cải thiện ứng dụng mà không phải lo lắng về các vấn đề phức tạp của cơ sở hạ tầng.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/render.jpeg}
+    \vspace{1em}
+    \caption{Render}
+\end{figure}
